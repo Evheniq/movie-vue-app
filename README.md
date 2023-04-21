@@ -1,57 +1,23 @@
 # film-vue-app
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a web application for viewing movies. It allows users to browse a collection of movies, view movie details and watch movie trailers.
 
-## Recommended IDE Setup
+## Features Implemented
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [x] Animated components
+- [x] Carousel
+- [x] Routing
+- [x] 5 types of screens
+- [ ] Page of movie #Didn't get enough time to do it :C
 
-## Customize configuration
+## I want to add more
+- [ ] Tests
+- [ ] CI/CD with Github actions
+- [ ] Publish in Github pages
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Peculiarities
+I expected that it would be possible to implement an architecture divided into functional modules, but the project turned out to be too small. Therefore, a simple architecture turned out.
 
-## Project Setup
+There is code repetition due to the fact that you need to do the same thing in different implementations. For example, display a separate page of a movie when clicking on a separate URL in the list of movies. And for tablets, you need to make an exit block with information about the film.
 
-```sh
-yarn
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-yarn dev
-```
-
-### Compile and Minify for Production
-
-```sh
-yarn build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-yarn test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-yarn test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-yarn build
-yarn test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+It was decided to separate the components, rather than make one huge universal component. That's why there are two components "Carousel", "Movie List". Both display movies, but the logic of interaction is too different to work with one.
