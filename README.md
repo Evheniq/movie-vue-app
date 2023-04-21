@@ -21,3 +21,4 @@ I expected that it would be possible to implement an architecture divided into f
 There is code repetition due to the fact that you need to do the same thing in different implementations. For example, display a separate page of a movie when clicking on a separate URL in the list of movies. And for tablets, you need to make an exit block with information about the film.
 
 It was decided to separate the components, rather than make one huge universal component. That's why there are two components "Carousel", "Movie List". Both display movies, but the logic of interaction is too different to work with one.
+In order not to insert these two components into the virtual home, I hid them behind v-if with reference to the screen width. Performance optimization.
