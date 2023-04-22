@@ -1,14 +1,5 @@
 <template>
-  <div v-if="error" class="error">
-    <img src="../../assets/img/error.png" alt="" />
-    <div class="title">Ooops..</div>
-    <div class="text">Something went wrong!</div>
-    <div class="button-wrapper">
-      <button-component class="button" @click="fetchMovies"> Try again </button-component>
-    </div>
-  </div>
-
-  <div v-else-if="isLoading" class="skeleton">
+  <div v-if="isLoading" class="skeleton">
     <div v-for="id in 10" class="skeleton-film-item" :key="id">
       <div class="picture animated"></div>
       <div class="title animated"></div>
@@ -45,11 +36,9 @@
 
 <script>
 import { getMovies } from '@/api/getMovies'
-import ButtonComponent from '@/components/UI/ButtonComponent.vue'
 
 export default {
   name: 'MovieList',
-  components: { ButtonComponent },
   data() {
     return {
       listMovies: [],
@@ -86,35 +75,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.error {
-  text-align: center;
-  font-weight: 400;
-
-  img {
-    padding-top: 255px;
-  }
-
-  .title {
-    font-size: 28px;
-    font-family: 'KronaOne', sans-serif;
-    margin-bottom: 4px;
-  }
-
-  .text {
-    font-size: 16px;
-  }
-
-  .button-wrapper {
-    position: absolute;
-    bottom: 70px;
-    width: calc(100% - 10px);
-
-    .button {
-      margin: 0 auto;
-    }
-  }
-}
-
 .skeleton {
   display: flex;
   flex-wrap: wrap;

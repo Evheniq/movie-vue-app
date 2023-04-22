@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageTransition from '@/views/PageTransition.vue'
 import MainPage from '@/views/MainPage.vue'
+import NotFoundPage from "@/views/NotFoundPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,7 +24,12 @@ const router = createRouter({
           component: () => import('../views/MoviePage.vue')
         }
       ]
-    }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFoundPage,
+    },
   ]
 })
 
