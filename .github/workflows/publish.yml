@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
+        run: npm install
       - name: Lint
         run: npm run lint
 
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '14'
       - name: Install deps
-        run: npm ci
+        run: npm install
       - name: Test
         run: npm run test:unit
 
