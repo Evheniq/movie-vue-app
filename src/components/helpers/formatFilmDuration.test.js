@@ -1,4 +1,5 @@
 import {formatFilmDuration} from './formatFilmDuration';
+import {describe, expect, it} from '@jest/globals';
 
 describe('formatFilmDuration', () => {
     it('should format the duration correctly', () => {
