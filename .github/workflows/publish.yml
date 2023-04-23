@@ -1,5 +1,8 @@
 name: Publish film-vue-app
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -41,15 +44,6 @@ jobs:
       - name: Build
         run: |
           npm run build
-#          git config --global user.email "qundola@gmail.com"
-#          git config --global user.name "Evhenii"
-#          git checkout gh-pages || git checkout --orphan gh-pages
-#          git rm -rf .
-#          mv dist/* .
-#          rmdir dist
-#          git add -A .
-#          git commit -m "Deploy to GitHub Pages"
-#          git push --force --quiet "https://${ACCESS_TOKEN}@github.com/${{ github.repository }}" gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
