@@ -28,7 +28,7 @@
       </div>
       <div class="text">
         <div class="stars">
-          <img src="../../assets/icons/star.svg" alt="star" />
+          <img src="@/assets/icons/star.svg" alt="star" />
           {{ film.imdb_rating }} <span>/10</span>
         </div>
         <div class="film-name">{{ film.title }}</div>

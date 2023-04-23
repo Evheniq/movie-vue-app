@@ -3,7 +3,7 @@ on: push
 jobs:
   lint:
     runs-on: ubuntu-latest
-    name: Lint Vue
+    name: Lint film-vue-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -11,10 +11,44 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-#  build_vue:
-#    runs-on: ubuntu-latest
-#    name: Build Vue
-#    steps:
-#      - uses: actions/checkout@v3
-#      - id: Build-Vue
 
+  test_unit:
+    runs-on: ubuntu-latest
+    name: Test film-vue-app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: Install deps
+        run: npm ci
+      - name: Test
+        run: npm run test:unit
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Install dependencies
+        run: npm install
+      - name: Build and deploy
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          npm run build
+          git config --global user.email "qundola@gmail.com"
+          git config --global user.name "Evhenii"
+          git checkout gh-pages || git checkout --orphan gh-pages
+          git rm -rf .
+          mv dist/* .
+          rmdir dist
+          git add -A .
+          git commit -m "Deploy to GitHub Pages"
+          git push --force --quiet "https://${ACCESS_TOKEN}@github.com/${{ github.repository }}" gh-pages

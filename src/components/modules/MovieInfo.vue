@@ -3,7 +3,7 @@
     <div class="rating">
       <div class="imbd-rating">IBDb rating</div>
       <div class="stars">
-        <img src="../../assets/icons/star.svg" alt="star" />
+        <img src="@/assets/icons/star.svg" alt="star" />
         {{ filmObject.imdb_rating }} <span>/10</span>
       </div>
     </div>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { formatFilmDuration } from '../helpers/formatFilmDuration'
+import {formatFilmDuration} from '../helpers/formatFilmDuration.js'
 import ButtonComponent from '@/components/UI/ButtonComponent.vue'
 
 export default {
@@ -89,7 +89,7 @@ export default {
 .film-info {
   min-height: 370px;
   width: 100%;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 
   display: flex;
   flex-direction: column;
