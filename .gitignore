@@ -29,4 +29,3 @@ coverage
 /.env
 /docker-compose.yml
 /Dockerfile
-/package-lock.json
