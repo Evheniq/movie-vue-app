@@ -38,17 +38,20 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: npm install
-      - name: Build and deploy
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Build
         run: |
           npm run build
-          git config --global user.email "qundola@gmail.com"
-          git config --global user.name "Evhenii"
-          git checkout gh-pages || git checkout --orphan gh-pages
-          git rm -rf .
-          mv dist/* .
-          rmdir dist
-          git add -A .
-          git commit -m "Deploy to GitHub Pages"
-          git push --force --quiet "https://${ACCESS_TOKEN}@github.com/${{ github.repository }}" gh-pages
+#          git config --global user.email "qundola@gmail.com"
+#          git config --global user.name "Evhenii"
+#          git checkout gh-pages || git checkout --orphan gh-pages
+#          git rm -rf .
+#          mv dist/* .
+#          rmdir dist
+#          git add -A .
+#          git commit -m "Deploy to GitHub Pages"
+#          git push --force --quiet "https://${ACCESS_TOKEN}@github.com/${{ github.repository }}" gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./dist
