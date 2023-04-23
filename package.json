@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build --base=movie-vue-app",
     "preview": "vite preview",
     "test:unit": "jest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
