@@ -12,6 +12,7 @@ This is a web application for viewing movies. It allows users to browse a collec
 
 ## Special 🤩
 - [x] Unit test using Jest
+- [x] Create Docker container
 - [x] CI/CD using Github actions and auto publishing to github pages in separate branche
 - [x] Publish in Github pages. There problem with CORS 😅
 
