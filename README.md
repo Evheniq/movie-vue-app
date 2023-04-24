@@ -1,4 +1,4 @@
-# film-vue-app
+# movie-vue-app
 
 This is a web application for viewing movies. It allows users to browse a collection of movies, view movie details and watch movie trailers.
 
@@ -10,7 +10,7 @@ This is a web application for viewing movies. It allows users to browse a collec
 - [x] 5 types of screens
 - [x] Page of movie
 
-## Special
+## Special 🤩
 - [x] Unit test using Jest
 - [x] CI/CD using Github actions and auto publishing to github pages in separate branche
 - [x] Publish in Github pages. There problem with CORS 😅
