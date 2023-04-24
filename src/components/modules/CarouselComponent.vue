@@ -75,13 +75,12 @@ export default {
     this.currentSlide = 4
   },
   watch: {
-    currentSlide: function (val) {
+    currentSlide (val) {
       this.$emit('selectMovie', this.listMovies[val - 2])
     }
   },
   methods: {
     handleMoreMovies() {
-      console.log('++')
       this.$emit('moreMovies')
     }
   }

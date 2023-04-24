@@ -59,7 +59,7 @@
       </div>
     </div>
     <a
-      href="https://www.youtube.com/watch?v=5ldIQtgCYzk&list=RDMMtCZyEQXDFio&index=32&ab_channel=CostelVanDein-Topic"
+      href="https://www.youtube.com/watch?v=oZn3qSgmLqI&ab_channel=RottenTomatoesTV"
     >
       <button-component style="margin-top: 15px" rectangle> Watch trailer </button-component>
     </a>

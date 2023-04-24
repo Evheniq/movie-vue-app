@@ -1,20 +1,23 @@
 <template>
   <main>
     <div class="main-inner">
-      <movie-info v-if="windowWidth >= 1152 && currentFilm" :film-object="currentFilm" />
+      <movie-info v-if="showOnLaptop && currentFilm" :film-object="currentFilm" />
 
-      <movie-list v-if="windowWidth < 1152" />
+      <movie-list v-if="!showOnLaptop" />
 
       <carousel-component
-        v-if="windowWidth >= 1152"
+        v-if="showOnLaptop"
         :list-movies="listMovies"
         @selectMovie="handleMovieSelect"
         @moreMovies="handleMoreMovies"
       />
     </div>
-    <transition>
-      <img v-if="windowWidth >= 1152 && showImage" :src="currentFilm.bg_picture" alt="bg_picture" />
-    </transition>
+    <template v-if="showOnLaptop">
+      <transition>
+        <img v-if="showImage" :src="currentFilm.bg_picture" alt="bg_picture" />
+      </transition>
+    </template>
+
   </main>
 </template>
 
@@ -43,7 +46,7 @@ export default {
       this.currentFilm = movie
     },
     handleSize() {
-      this.windowWidth = window.innerWidth
+      this.windowWidth = window.outerWidth
     },
     changeImage() {
       this.showImage = false
@@ -58,7 +61,7 @@ export default {
     }
   },
   computed: {
-    showCarousel() {
+    showOnLaptop() {
       return this.windowWidth >= 1152
     }
   },
@@ -78,7 +81,7 @@ export default {
     window.addEventListener('resize', this.handleSize)
   },
   unmounted() {
-    window.removeEventListener('resize', this.handleSize)
+    // window.removeEventListener('resize', this.handleSize)
   }
 }
 </script>
@@ -114,7 +117,6 @@ main {
   }
 }
 
-// PC
 @media (min-width: 1152px) {
   main {
     background: linear-gradient(

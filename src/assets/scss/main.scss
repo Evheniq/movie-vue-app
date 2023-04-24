@@ -1,4 +1,5 @@
 @import '@/assets/scss/variables.scss';
+@import '@/assets/scss/fonts.scss';
 
 * {
   padding: 0;
@@ -7,7 +8,7 @@
 
 body {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   color: $white;
   background-color: #161616;
 }

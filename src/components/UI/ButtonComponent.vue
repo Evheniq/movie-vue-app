@@ -33,7 +33,7 @@ button {
   font-weight: 700;
   font-size: 14px;
   color: $white;
-  cursor: pointer;
+  cursor: pointer;;
 
   img {
     margin-right: 14px;

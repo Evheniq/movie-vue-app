@@ -4,7 +4,7 @@
     <div class="title">Ooops..</div>
     <div class="text">Something went wrong!</div>
     <div class="button-wrapper">
-      <button-component class="button"> Try again </button-component>
+      <button-component class="button" @click="$router.go(-1)"> Try again </button-component>
     </div>
   </div>
 </template>
