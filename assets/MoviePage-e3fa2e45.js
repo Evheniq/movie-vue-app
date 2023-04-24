@@ -1,1 +1,0 @@
-import{_ as t,g as s,t as a}from"./index-b227d547.js";const r={name:"MoviePage",data(){return{movie:{}}},async mounted(){const{response:e}=await s();console.log(e),this.movie=e.data.results[this.$route.params.id-1]}};function i(e,n,c,p,o,m){return" Movie Page "+a(o.movie)}const u=t(r,[["render",i]]);export{u as default};
