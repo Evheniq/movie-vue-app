@@ -8,12 +8,12 @@ This is a web application for viewing movies. It allows users to browse a collec
 - [x] Carousel
 - [x] Routing
 - [x] 5 types of screens
-- [ ] Page of movie #Didn't get enough time to do it :C
+- [x] Page of movie
 
-## I want to add more
-- [ ] Tests
-- [ ] CI/CD with Github actions
-- [ ] Publish in Github pages
+## Special
+- [x] Unit test using Jest
+- [x] CI/CD using Github actions and auto publishing to github pages in separate branche
+- [x] Publish in Github pages. There problem with CORS 😅
 
 ## Peculiarities
 I expected that it would be possible to implement an architecture divided into functional modules, but the project turned out to be too small. Therefore, a simple architecture turned out.
